@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎂 Happy Birthday! 🎉</title>
+    <!-- Birthday Song -->
+    <audio id="birthdaySong" loop preload="auto">
+        <source src="_Tera_Happy_Birthday_Hindi_Wishes_Ringtone_(by Fringster.com).mp3" type="audio/mpeg">
+    </audio>
+    <meta name="description" content="A special birthday wish filled with love, celebration, and heartfelt shayari.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Nunito:wght@400;600;700;800&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Animated floating emojis background -->
+    <div class="emojis-container" id="emojisContainer"></div>
+
+    <!-- Canvas for fireworks -->
+    <canvas id="fireworksCanvas"></canvas>
+
+    <!-- Main container -->
+    <div class="birthday-wrapper" id="birthdayWrapper">
+
+        <!-- Stage 0: Welcome / Surprise Opener -->
+        <section class="stage active" id="stage0">
+            <div class="emoji-burst">🎁</div>
+            <h1 class="title shimmer-text">Arre Suno Suno!</h1>
+            <p class="subtitle">Aaj ek bahut khaas din hai... 🌟</p>
+            <div class="gif-wrap glow-border">
+                <img class="gif" alt="Party Popper celebration" src="images/party popper.gif">
+            </div>
+            <p class="shayari">
+                "Kuch toh hai aaj khaas,<br>
+                Jo laa raha hoon tumhare paas..."
+            </p>
+            <button class="btn btn-primary pulse-btn" id="btnOpen">Kya hai batao! 🎁</button>
+        </section>
+
+        <!-- Stage 1: The Birthday Reveal -->
+        <section class="stage" id="stage1">
+            <div class="emoji-burst celebration">🎂</div>
+            <h1 class="title glow rainbow-text">Happy Birthday! 🎉🎉</h1>
+            <p class="subtitle">Janamdin Mubarak Ho! 🥳✨</p>
+            <div class="gif-wrap big glow-border">
+                <img class="gif" alt="Happy Birthday celebration" src="images/happy birthday.gif">
+            </div>
+            <p class="shayari">
+                "Phoolon ne amrit barsaya,<br>
+                Surya ne apni kirne bheja,<br>
+                Chaand ne chandni di hai,<br>
+                Aur humne yeh sandesh bheja — <br>
+                <strong>Happy Birthday! 🎂🎈</strong>"
+            </p>
+            <button class="btn btn-primary pulse-btn" id="btnNext1">Aur sunao! 🥰</button>
+        </section>
+
+        <!-- Stage 2: Heartfelt Shayari -->
+        <section class="stage" id="stage2">
+            <div class="emoji-burst">🌹</div>
+            <h1 class="title shimmer-text">Dil Se...</h1>
+            <p class="subtitle">Yeh dil ki baatein sirf tumhare liye ❤️</p>
+            <div class="gif-wrap glow-border">
+                <img class="gif" alt="Party Popper" src="images/party popper.gif">
+            </div>
+            <div class="shayari-card">
+                <p class="shayari big-shayari">
+                    "Khuda se maanga tha ek taara,<br>
+                    Usne tumhe bhej diya duniya mein saara.<br>
+                    Tum ho toh har din tyohaar hai,<br>
+                    Tumhare bina toh zindagi bekar hai. 🌸"
+                </p>
+            </div>
+            <button class="btn btn-primary pulse-btn" id="btnNext2">Aur bhi hai! ✨</button>
+        </section>
+
+        <!-- Stage 3: More Shayari + Wishes -->
+        <section class="stage" id="stage3">
+            <div class="emoji-burst celebration">🎉</div>
+            <h1 class="title glow">Janamdin Ki Dher Saari Badhaaiyaan!</h1>
+            <p class="subtitle">Aaj ka din tumhare naam ✨🎈</p>
+            <div class="gif-wrap big glow-border">
+                <img class="gif" alt="Happy Birthday" src="images/happy birthday.gif">
+            </div>
+            <div class="shayari-card">
+                <p class="shayari big-shayari">
+                    "Zindagi mein khushiyon ka mela ho,<br>
+                    Dukh ka koi jhela na ho.<br>
+                    Har subah sitaaron si chamke,<br>
+                    Aur raat chaand jaisi roshan ho. 🌙✨"
+                </p>
+            </div>
+            <button class="btn btn-primary pulse-btn" id="btnNext3">Final Wish! 🎂</button>
+        </section>
+
+        <!-- Stage 4: Grand Finale -->
+        <section class="stage" id="stage4">
+            <div class="emoji-burst celebration">🥳</div>
+            <h1 class="title glow rainbow-text grand-title">Janamdin Mubarak Ho! 🎂🎉</h1>
+            <div class="dual-gif-wrap">
+                <div class="gif-wrap glow-border">
+                    <img class="gif" alt="Party Popper" src="images/party popper.gif">
+                </div>
+                <div class="gif-wrap glow-border">
+                    <img class="gif" alt="Happy Birthday" src="images/happy birthday.gif">
+                </div>
+            </div>
+            <div class="final-wish-card">
+                <p class="shayari final-shayari">
+                    "Tumhari har dua kabool ho,<br>
+                    Har sapna poora ho,<br>
+                    Jahan bhi jao wahan khushiyan hon,<br>
+                    Aur har pal ka ehsaas anmol ho. 🌺"
+                </p>
+                <div class="wish-divider"></div>
+                <p class="final-message">
+                    🎂 Wishing you the happiest birthday ever! 🎂<br>
+                    May this year bring you endless joy, success,<br>
+                    and all the love you deserve! 💖🎉
+                </p>
+            </div>
+            <div class="cake-emojis">🎂🎈🎁🎊🎉🎂🎈🎁🎊🎉</div>
+
+            <!-- Music Player Widget -->
+            <div class="music-player" id="musicPlayer">
+                <div class="music-bars" id="musicBars">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <div class="music-info">
+                    <span class="music-icon">🎵</span>
+                    <span class="music-title">Tera Happy Birthday</span>
+                </div>
+                <button class="music-toggle" id="musicToggle" title="Play/Pause">⏸️</button>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
