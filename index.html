@@ -1,152 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎂 Happy Birthday! 🎉</title>
-    <!-- Birthday Song -->
-    <audio id="birthdaySong" loop preload="auto">
-        <source src="_Tera_Happy_Birthday_Hindi_Wishes_Ringtone_(by Fringster.com).mp3" type="audio/mpeg">
-    </audio>
-    <meta name="description" content="A special birthday wish filled with love, celebration, and heartfelt shayari.">
+    <title>I'm Sorry, Bebu 🥺💕</title>
+    <meta name="description" content="A heartfelt sorry message for Anshula, the most special person in the world.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Nunito:wght@400;600;700;800&family=Outfit:wght@400;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Nunito:wght@400;600;700;800&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <!-- Animated floating emojis background -->
-    <div class="emojis-container" id="emojisContainer"></div>
 
-    <!-- Canvas for fireworks -->
-    <canvas id="fireworksCanvas"></canvas>
+    <!-- Love Song -->
+    <audio id="loveSong" loop preload="auto">
+        <source src="images/Tay Hai - Full Video ｜ Rustom ｜ Akshay Kumar &amp; Ileana D'cruz ｜ Ankit Tiwari [HzkJ7sYh39g].mp3" type="audio/mpeg">
+    </audio>
 
-    <!-- Main container -->
-    <div class="birthday-wrapper" id="birthdayWrapper">
-
-        <!-- Stage 0: Welcome / Surprise Opener -->
-        <section class="stage active" id="stage0">
-            <div class="emoji-burst">🎁</div>
-            <h1 class="title shimmer-text">Arre Suno Suno!</h1>
-            <p class="subtitle">Aaj ek bahut khaas din hai... 🌟</p>
-            <div class="gif-wrap glow-border">
-                <img class="gif" alt="Party Popper celebration" src="images/party popper.gif">
+    <!-- Floating music player (fixed, always visible) -->
+    <div class="music-player-float" id="musicPlayerFloat">
+        <div class="vinyl" id="vinyl">
+            <div class="vinyl-inner">🎵</div>
+        </div>
+        <div class="music-meta">
+            <div class="music-song-title">Tay Hai</div>
+            <div class="music-artist">Rustom · Ankit Tiwari</div>
+            <div class="music-bars-row">
+                <span class="mbar"></span>
+                <span class="mbar"></span>
+                <span class="mbar"></span>
+                <span class="mbar"></span>
+                <span class="mbar"></span>
             </div>
-            <p class="shayari">
-                "Kuch toh hai aaj khaas,<br>
-                Jo laa raha hoon tumhare paas..."
-            </p>
-            <button class="btn btn-primary pulse-btn" id="btnOpen">Kya hai batao! 🎁</button>
-        </section>
-
-        <!-- Stage 1: The Birthday Reveal -->
-        <section class="stage" id="stage1">
-            <div class="emoji-burst celebration">🎂</div>
-            <h1 class="title glow rainbow-text">Happy Birthday! 🎉🎉</h1>
-            <p class="subtitle">Janamdin Mubarak Ho! 🥳✨</p>
-            <div class="gif-wrap big glow-border">
-                <img class="gif" alt="Happy Birthday celebration" src="images/happy birthday.gif">
-            </div>
-            <p class="shayari">
-                "Phoolon ne amrit barsaya,<br>
-                Surya ne apni kirne bheja,<br>
-                Chaand ne chandni di hai,<br>
-                Aur humne yeh sandesh bheja — <br>
-                <strong>Happy Birthday! 🎂🎈</strong>"
-            </p>
-            <button class="btn btn-primary pulse-btn" id="btnNext1">Aur sunao! 🥰</button>
-        </section>
-
-        <!-- Stage 2: Heartfelt Shayari -->
-        <section class="stage" id="stage2">
-            <div class="emoji-burst">🌹</div>
-            <h1 class="title shimmer-text">Dil Se...</h1>
-            <p class="subtitle">Yeh dil ki baatein sirf tumhare liye ❤️</p>
-            <div class="gif-wrap glow-border">
-                <img class="gif" alt="Party Popper" src="images/party popper.gif">
-            </div>
-            <div class="shayari-card">
-                <p class="shayari big-shayari">
-                    "Khuda se maanga tha ek taara,<br>
-                    Usne tumhe bhej diya duniya mein saara.<br>
-                    Tum ho toh har din tyohaar hai,<br>
-                    Tumhare bina toh zindagi bekar hai. 🌸"
-                </p>
-            </div>
-            <button class="btn btn-primary pulse-btn" id="btnNext2">Aur bhi hai! ✨</button>
-        </section>
-
-        <!-- Stage 3: More Shayari + Wishes -->
-        <section class="stage" id="stage3">
-            <div class="emoji-burst celebration">🎉</div>
-            <h1 class="title glow">Janamdin Ki Dher Saari Badhaaiyaan!</h1>
-            <p class="subtitle">Aaj ka din tumhare naam ✨🎈</p>
-            <div class="gif-wrap big glow-border">
-                <img class="gif" alt="Happy Birthday" src="images/happy birthday.gif">
-            </div>
-            <div class="shayari-card">
-                <p class="shayari big-shayari">
-                    "Zindagi mein khushiyon ka mela ho,<br>
-                    Dukh ka koi jhela na ho.<br>
-                    Har subah sitaaron si chamke,<br>
-                    Aur raat chaand jaisi roshan ho. 🌙✨"
-                </p>
-            </div>
-            <button class="btn btn-primary pulse-btn" id="btnNext3">Final Wish! 🎂</button>
-        </section>
-
-        <!-- Stage 4: Grand Finale -->
-        <section class="stage" id="stage4">
-            <div class="emoji-burst celebration">🥳</div>
-            <h1 class="title glow rainbow-text grand-title">Janamdin Mubarak Ho! 🎂🎉</h1>
-            <div class="dual-gif-wrap">
-                <div class="gif-wrap glow-border">
-                    <img class="gif" alt="Party Popper" src="images/party popper.gif">
-                </div>
-                <div class="gif-wrap glow-border">
-                    <img class="gif" alt="Happy Birthday" src="images/happy birthday.gif">
-                </div>
-            </div>
-            <div class="final-wish-card">
-                <p class="shayari final-shayari">
-                    "Tumhari har dua kabool ho,<br>
-                    Har sapna poora ho,<br>
-                    Jahan bhi jao wahan khushiyan hon,<br>
-                    Aur har pal ka ehsaas anmol ho. 🌺"
-                </p>
-                <div class="wish-divider"></div>
-                <p class="final-message">
-                    🎂 Wishing you the happiest birthday ever! 🎂<br>
-                    May this year bring you endless joy, success,<br>
-                    and all the love you deserve! 💖🎉
-                </p>
-            </div>
-            <div class="cake-emojis">🎂🎈🎁🎊🎉🎂🎈🎁🎊🎉</div>
-
-            <!-- Music Player Widget -->
-            <div class="music-player" id="musicPlayer">
-                <div class="music-bars" id="musicBars">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-                <div class="music-info">
-                    <span class="music-icon">🎵</span>
-                    <span class="music-title">Tera Happy Birthday</span>
-                </div>
-                <button class="music-toggle" id="musicToggle" title="Play/Pause">⏸️</button>
-            </div>
-        </section>
-
+        </div>
+        <button class="music-playpause" id="musicPlayPause" title="Play / Pause">▶</button>
     </div>
+
+    <!-- Floating hearts bg -->
+    <div class="hearts-bg" id="heartsBg"></div>
+
+    <!-- Petal rain -->
+    <div class="petals-bg" id="petalsBg"></div>
+
+    <!-- ══════════ PAGE 1 — LANDING ══════════ -->
+    <section class="page active" id="page1">
+        <div class="landing-inner">
+            <div class="top-tag">🌸 A message for you...</div>
+            <h1 class="main-title">Suno naa,<br><span class="name-highlight">Bebu</span> 🥺</h1>
+            <p class="main-sub">Kuch kehna chahta hoon tumse dil se...</p>
+
+            <div class="hero-img-wrap wiggle">
+                <img src="images/im sorry_(.jpg" alt="Im sorry cat" class="hero-img">
+            </div>
+
+            <div class="quote-bubble">
+                "Tumhari aankhon mein aansu lana kabhi nahi chahta tha... 💔"
+            </div>
+
+            <button class="btn btn-main pulse" id="btnListen">Boliye na, sun lungi 🥺</button>
+            <button class="btn btn-ghost" id="btnNotNow">Nahi sunnaa 😤</button>
+        </div>
+    </section>
+
+    <!-- ══════════ PAGE 2 — SORRY CARDS ══════════ -->
+    <section class="page" id="page2">
+        <h2 class="section-title">Mere dil ki baatein... 💌</h2>
+        <p class="section-sub">Flip karo, padho...</p>
+
+        <!-- Card deck -->
+        <div class="cards-deck" id="cardsDeck">
+
+            <!-- Card 1 -->
+            <div class="flip-card" id="card1">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front card-front-1">
+                        <div class="card-front-emoji">🐹</div>
+                        <img src="images/Sad Hamster I Am Sorry, Please Forgive Me! With Big Eyes And A Pink Bow Sticker.jpg" alt="Sorry hamster" class="card-img">
+                        <p class="card-tap-hint">Tap to open 💌</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="back-emoji">💔</div>
+                        <h3 class="back-title">Galti meri thi...</h3>
+                        <p class="back-msg">
+                            Anshula, jo kuch hua usmein meri galti thi.
+                            Tumhe hurt karna mera maksad kabhi nahi tha.
+                            Tumhare bina yeh dil bilkul khali hai. 🥺
+                        </p>
+                        <div class="back-shayari">"Bura laga mujhe bhi jab tumhara chehra udas tha..."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="flip-card" id="card2">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front card-front-2">
+                        <div class="card-front-emoji">😿</div>
+                        <img src="images/download (1).jpg" alt="Sorry cat with flowers" class="card-img">
+                        <p class="card-tap-hint">Tap to open 💌</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="back-emoji">🌸</div>
+                        <h3 class="back-title">Tum meri duniya ho...</h3>
+                        <p class="back-msg">
+                            Jis din se aap mili ho, uss din se zindagi
+                            rangeen ho gayi hai. Mujhe maaf kardo Bebu,
+                            please 🙏
+                        </p>
+                        <div class="back-shayari">"Phool laata hoon, khushbu tumhari yaad se aati hai..."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="flip-card" id="card3">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front card-front-3">
+                        <div class="card-front-emoji">💙</div>
+                        <img src="images/download.jpg" alt="Stitch love" class="card-img stitch-img">
+                        <p class="card-tap-hint">Tap to open 💌</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="back-emoji">💙</div>
+                        <h3 class="back-title">Ohana matlab family...</h3>
+                        <p class="back-msg">
+                            "Ohana means family. Family means nobody
+                            gets left behind." Aur tum meri family ho Bebu.
+                            Main kabhi tumhe nahi chodna chahta. 💙
+                        </p>
+                        <div class="back-shayari">"Tumhare bina adhoora hoon main, yeh sach hai mera..."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="flip-card" id="card4">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front card-front-4">
+                        <div class="card-front-emoji">🐱</div>
+                        <img src="images/Best 273+ Hamster Pfp Aesthetic Looks For Instagram & WhatsApp.jpg" alt="Sad hamster" class="card-img">
+                        <p class="card-tap-hint">Tap to open 💌</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="back-emoji">😭</div>
+                        <h3 class="back-title">Mujhe maaf kardo...</h3>
+                        <p class="back-msg">
+                            Dekho main bhi aise hi dikh raha hoon
+                            andar se jab tum gusse mein hoti ho.
+                            Tumse lad nahi sakta, tumse jit nahi sakta... 🥺
+                        </p>
+                        <div class="back-shayari">"Tumhari ek muskaan pe dil luta deta hoon..."</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="cards-progress">
+            <span class="dot active" id="dot1"></span>
+            <span class="dot" id="dot2"></span>
+            <span class="dot" id="dot3"></span>
+            <span class="dot" id="dot4"></span>
+        </div>
+
+        <div class="cards-nav">
+            <button class="nav-btn" id="btnPrevCard">← Pichla</button>
+            <span class="card-counter" id="cardCounter">1 / 4</span>
+            <button class="nav-btn" id="btnNextCard">Agla →</button>
+        </div>
+
+        <button class="btn btn-main" id="btnAfterCards" style="margin-top: 20px;">Aur sunao... 💕</button>
+    </section>
+
+    <!-- ══════════ PAGE 3 — GIF SORRY ══════════ -->
+    <section class="page" id="page3">
+        <h2 class="section-title">Sach mein bahut sorry hoon 😢</h2>
+
+        <div class="gif-strip">
+            <div class="gif-frame tilt-left">
+                <div class="gif-label">Yeh dekh...</div>
+                <img src="images/SORRY.gif" alt="Sorry gif" class="sorry-gif">
+            </div>
+            <div class="gif-frame tilt-right">
+                <div class="gif-label">Aur yeh bhi...</div>
+                <img src="images/cute.gif" alt="Cute sorry" class="sorry-gif">
+            </div>
+        </div>
+
+        <div class="apology-letter">
+            <div class="letter-header">
+                <span class="letter-to">To: Anshula (Bebu) 💌</span>
+                <span class="letter-from">From: Tumhara wala 💕</span>
+            </div>
+            <div class="letter-body">
+                <p>Bebu,</p>
+                <p>
+                    Main jaanta hoon ki maine tumhe hurt kiya.
+                    Aur iske liye koi justification nahi hai.
+                    Tum meri sabse khaas insaan ho aur tumhe
+                    dard dena kabhi nahi chahta tha. 💔
+                </p>
+                <p>
+                    Har woh pal jab tum muskurati ho — woh
+                    duniya ki sabse khoobsurat cheez hoti hai.
+                    Aur main chahta hoon ki woh muskaan
+                    hamesha bani rahe. 🌸
+                </p>
+                <p class="letter-sign">
+                    Dil se maafi maangta hoon,<br>
+                    Tumhare bina adhura hoon main. 🥺❤️
+                </p>
+            </div>
+        </div>
+
+        <button class="btn btn-main" id="btnAfterLetter">Aage sunao 🥺</button>
+    </section>
+
+    <!-- ══════════ PAGE 4 — THE QUESTION ══════════ -->
+    <section class="page" id="page4">
+        <div class="question-wrap">
+
+            <div class="big-gif-wrap wobble">
+                <img src="images/Im Sorry Bow GIF - Im Sorry Bow Puppy Eyes - Discover & Share GIFs.gif" alt="Puppy eyes sorry" class="big-gif">
+            </div>
+
+            <h2 class="question-title">Toh kya ab<br>maaf karogi? 🥺</h2>
+            <p class="question-sub">Yeh aankhein dekh... please 🐶💕</p>
+
+            <div class="shayari-box">
+                <p>
+                    "Tumhari ek 'Haan' se dil ka<br>
+                    saara bojh utar jaata hai,<br>
+                    Maafi de do Bebu, tumhare bina<br>
+                    kuch bhi achha nahi lagta..." 🌹
+                </p>
+            </div>
+
+            <div class="answer-btns">
+                <button class="btn btn-yes-big" id="btnYesForgive">Haan, maaf kar diya 💗</button>
+                <button class="btn btn-no-q" id="btnNoForgive">Abhi nahi sochungi 😤</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════ PAGE 5 — PLEAD MORE ══════════ -->
+    <section class="page" id="page5">
+        <div class="plead-wrap">
+            <div class="emoji-jumbo">😭</div>
+            <h2 class="plead-title">Nahi?! Ekdum nahi?!</h2>
+            <p class="plead-sub">Theek hai... yeh dekh phir 👇</p>
+
+            <div class="gif-frame-big">
+                <img src="images/Im Sorry GIF – Im Sorry Really – discover and share GIFs.gif" alt="Really sorry gif" class="plead-gif">
+            </div>
+
+            <div class="reason-cards">
+                <div class="reason-card">
+                    <span class="reason-icon">💕</span>
+                    <p>Tumhari hassi meri jaan hai</p>
+                </div>
+                <div class="reason-card">
+                    <span class="reason-icon">🌸</span>
+                    <p>Tumhare bina din adhura lagta hai</p>
+                </div>
+                <div class="reason-card">
+                    <span class="reason-icon">🥺</span>
+                    <p>Mujhe tumhari zarurat hai Bebu</p>
+                </div>
+            </div>
+
+            <div class="answer-btns">
+                <button class="btn btn-yes-big" id="btnYes2">Achha theek hai, maan gayi 💗</button>
+                <button class="btn btn-no-q shrink-no" id="btnNo2">Still no 😤</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════ PAGE 6 — FINAL RUNAWAY ══════════ -->
+    <section class="page" id="page6">
+        <div class="final-plead-wrap">
+            <div class="emoji-jumbo">🏃</div>
+            <h2 class="plead-title">Kitna bhav!</h2>
+            <p class="plead-sub">*"Nahi" button bhaag gaya... 🫣*</p>
+
+            <div class="gif-frame-big">
+                <img src="images/Im Sorry Bow GIF - Im Sorry Bow Puppy Eyes - Discover & Share GIFs (1).gif" alt="Bow sorry gif" class="plead-gif">
+            </div>
+
+            <div class="shayari-box alt">
+                <p>
+                    "Rooth jaao tum chahe,<br>
+                    Par main toh manata rahoon,<br>
+                    Kyunki tumse pyaar karta hoon<br>
+                    Aur hamesha karta rahoon..." 💖
+                </p>
+            </div>
+
+            <button class="btn btn-yes-big" id="btnYes3">THEEK HAI MAAF KIYA 💗</button>
+            <!-- Runaway button — placed & moved by JS -->
+            <button class="btn btn-runaway-base" id="btnRunaway">Nahi! 😤</button>
+        </div>
+    </section>
+
+    <!-- ══════════ PAGE 7 — HAPPY ENDING ══════════ -->
+    <section class="page" id="page7">
+        <div class="happy-wrap">
+            <div class="emoji-jumbo celebration">🎉</div>
+            <h1 class="happy-title">Yaaay! Knew it! 💕</h1>
+            <p class="happy-sub">Tumse pyaar karta hoon, Anshula ❤️</p>
+
+            <div class="gif-frame-big glow-gif">
+                <img src="images/Sorry GIF - Sorry - Discover & Share GIFs.gif" alt="Happy love gif" class="plead-gif">
+            </div>
+
+            <div class="love-cards-wrap">
+                <div class="love-card">
+                    <span>🌹</span>
+                    <p>Tum meri sunshine ho</p>
+                </div>
+                <div class="love-card">
+                    <span>💫</span>
+                    <p>Tumhare bina adhoora hoon</p>
+                </div>
+                <div class="love-card">
+                    <span>💗</span>
+                    <p>Hamesha tumhara rahoon</p>
+                </div>
+            </div>
+
+            <div class="final-shayari">
+                <div class="shayari-stars">✨ ✨ ✨</div>
+                <p>
+                    "Tumhare bina main kuch nahi hoon,<br>
+                    Tum ho toh sab kuch hoon main.<br>
+                    Pyaar karta hoon tumse Anshula,<br>
+                    Aaj bhi, kal bhi, hamesha." 🌸❤️
+                </p>
+                <div class="shayari-stars">✨ ✨ ✨</div>
+            </div>
+
+            <div class="love-gif-wrap">
+                <img src="images/love.gif" alt="Love gif" class="love-gif">
+            </div>
+
+            <!-- ✨ PRETTIEST GIRL REVEAL ✨ -->
+            <div class="prettiest-tease" id="prettiestTease">
+                <div class="tease-divider"></div>
+                <p class="tease-question">Aur ek last cheez... 🤫</p>
+                <p class="tease-sub">Duniya ki sabse khoobsurat ladki kaun hai?</p>
+                <button class="btn btn-prettiest pulse" id="btnPrettiest">
+                    Jaanna chahti ho? 🥰 Tap karo!
+                </button>
+            </div>
+
+            <!-- Camera mirror reveal (hidden until tapped) -->
+            <div class="camera-reveal" id="cameraReveal" style="display:none;">
+                <div class="camera-frame-wrap">
+                    <div class="camera-heart-glow"></div>
+                    <div class="camera-frame">
+                        <video id="selfieVideo" autoplay playsinline muted></video>
+                        <div class="camera-overlay">
+                            <div class="camera-sparkles">✨💕✨</div>
+                            <p class="camera-msg">Yeh wali! 👆<br><span class="camera-name">Tum ho Bebu! 😍</span></p>
+                            <p class="camera-sub">Duniya ki sabse khoobsurat,<br>sabse pyaari ladki... 🌸❤️</p>
+                        </div>
+                    </div>
+                    <div class="camera-corner tl">💕</div>
+                    <div class="camera-corner tr">✨</div>
+                    <div class="camera-corner bl">🌸</div>
+                    <div class="camera-corner br">💖</div>
+                </div>
+                <button class="btn btn-ghost btn-close-cam" id="btnCloseCam">Hehe theek hai 😊</button>
+            </div>
+
+        </div>
+    </section>
 
     <script src="main.js"></script>
 </body>
-
 </html>
